@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-requires = ["requests>=2.25.1","urllib3>=1.26.6","beautifulsoup4>=4.11.1"]
+requires = ["requests>=2.25.1","urllib3>=1.26.6","beautifulsoup4>=4.11.1", "lxml>=4.5.0"]
 
 
 setup(
     name='image_searcher',
-    version='1.0.3',
+    version='1.0.4',
     description='image_searcher',
     url='https://github.com/KiharaTakahiro/image_searcher',
     author='Takahiro Kihara',
