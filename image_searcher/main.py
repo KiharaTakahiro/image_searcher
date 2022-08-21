@@ -78,8 +78,10 @@ class ImageSearcher(object):
         list: 画像情報リスト
     """
     response = requests.get(url)
+    print(f'該当ページのリクエスト: {url}')
     soup = BeautifulSoup(response.text,'lxml')
     img_tags = soup.find("script", id="__NEXT_DATA__").get_text()
     jsons = json.loads(img_tags)
     img_list = [img["imageSrc"] for img in jsons["props"]["initialProps"]["pageProps"]["algos"]]
+    print(f'処理対象件数: {len(img_list)}件')
     return img_list
