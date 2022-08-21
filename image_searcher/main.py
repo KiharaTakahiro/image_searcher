@@ -80,6 +80,7 @@ class ImageSearcher(object):
     response = requests.get(url)
     print(f'該当ページのリクエスト: {url}')
     soup = BeautifulSoup(response.text,'lxml')
+    print('beautiful soupのインスタンス生成')
     img_tags = soup.find("script", id="__NEXT_DATA__").get_text()
     jsons = json.loads(img_tags)
     print(f'json解析完了: {len(jsons["props"]["initialProps"]["pageProps"]["algos"])}件')
